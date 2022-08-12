@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+    <moveThreadCount>7</moveThreadCount>
+
+    <solutionClass>Board</solutionClass>
+    <entityClass>Queen</entityClass>
+
+
+    <scoreDirectorFactory>
+<!--        <incrementalScoreCalculatorClass>NQueenIncrementalScoreCalculator</incrementalScoreCalculatorClass>-->
+        <easyScoreCalculatorClass>NQueenSimpleScoreCalculator</easyScoreCalculatorClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+    </scoreDirectorFactory>
+
+    <termination>
+        <bestScoreLimit>0</bestScoreLimit>
+    </termination>
+
+</solver>
